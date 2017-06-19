@@ -21,7 +21,7 @@ namespace Task03
     public Circle(Dot center, int radius)
     {
       this.Center = center;
-      this.Radius = radius;
+      this.Radius = radius;//todo pn нет проверки на отрицательность
     }
   }
 }

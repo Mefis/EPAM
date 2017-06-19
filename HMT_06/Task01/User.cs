@@ -33,14 +33,14 @@ namespace Task01
     /// </summary>
     public int Age { get; private set; }
 
-    public User(string lastName, string name, string patronymic, string dateOfBirth)
+    public User(string lastName, string name, string patronymic, string dateOfBirth)//todo pn почему бы на вход не принять DateTime, а не string. Не нужно писать в этом классе лишней логики. Общее поведение - передавать DateTime, а вот частное - строку - его через переопределение конструктора можно сделать.
     {
       this.LastName = lastName;
       this.Name = name;
       this.Patronymic = patronymic;
 
       DateTime dateResult;
-      string[] formats = { "dd.MM.yyyy" };
+      string[] formats = { "dd.MM.yyyy" };//todo pn в константу
       if (DateTime.TryParseExact(dateOfBirth, formats, CultureInfo.InvariantCulture, DateTimeStyles.None, out dateResult) && (DateTime.Now > dateResult))
       {
         this.DateOfBirth = dateResult;

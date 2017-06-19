@@ -4,7 +4,7 @@
   {
     public Wolf()
     {
-      this.Speed = base.Speed * 2; 
+      this.Speed = base.Speed * 2; //todo pn хардкод
     }
   }
 }

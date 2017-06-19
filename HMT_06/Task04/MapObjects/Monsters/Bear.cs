@@ -4,7 +4,7 @@
   {
     public Bear()
     {
-      this.Attack = base.Attack * 2;
-    }
+      this.Attack = base.Attack * 2;//todo pn хардкод
+		}
   }
 }

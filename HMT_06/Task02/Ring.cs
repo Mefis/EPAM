@@ -42,7 +42,7 @@ namespace Task02
     /// </summary>
     public double OuterCircumference { get; private set; }
 
-    public Ring(string centerX, string centerY, string innerRadius, string outerRadius)
+    public Ring(string centerX, string centerY, string innerRadius, string outerRadius)//todo pn аналогично
     {
       int x, y, inRad, outRad;
       if (int.TryParse(centerX, out x) && int.TryParse(centerY, out y))

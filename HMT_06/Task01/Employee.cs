@@ -15,8 +15,8 @@
     /// </summary>
     public int Experience { get; private set; }
 
-    public Employee(string lastName, string name, string patronymic, string dateOfBirth, string post, string experience) : base(lastName, name, patronymic, dateOfBirth)
-    {
+    public Employee(string lastName, string name, string patronymic, string dateOfBirth, string post, string experience) : base(lastName, name, patronymic, dateOfBirth)//todo pn опять же experience хочется видеть int, а не string
+		{
       this.Post = post;
 
       int exp;

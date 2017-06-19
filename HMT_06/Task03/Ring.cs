@@ -21,9 +21,9 @@ namespace Task03
 
     public Ring(Dot center, Round innerRound, Round outerRound)
     {
-      this.Center = center;
-      this.InnerRound = innerRound;
-      this.OuterRound = outerRound;
+		this.Center = center;
+		this.InnerRound = innerRound;//todo pn нет проверок на корректность (0 < innerRound < outerRound)
+		this.OuterRound = outerRound;
     }
   }
 }
