@@ -1,27 +1,28 @@
-﻿using System;
-
-namespace Task03
+﻿namespace Task03
 {
-  public class Circle : IFigure
-  {
-    public Dot Center { get; private set; }
-    public int Radius { get; private set; }
+    using System;
 
-    public double GetLenght()
+    public class Circle : IFigure
     {
-      return 2 * Math.PI * Radius;
-    }
+        public Circle(Dot center, int radius)
+        {
+            this.Center = center;
+            this.Radius = radius > 0 ? radius : default(int);
+        }
 
-    public void Draw()
-    {
-      Console.WriteLine(string.Format("Фигура: Окружность. Координаты X: {0} Y: {1} \nРадиус: {2}. \nДлина окружности: {3}",
-        this.Center.X, this.Center.Y, this.Radius, this.GetLenght()));
-    }
+        public Dot Center { get; private set; }
 
-    public Circle(Dot center, int radius)
-    {
-      this.Center = center;
-      this.Radius = radius;//todo pn нет проверки на отрицательность
+        public int Radius { get; private set; }
+
+        public double GetLenght()
+        {
+            return 2 * Math.PI * this.Radius;
+        }
+
+        public void Draw()
+        {
+            string outputString = "Фигура: Окружность. Координаты X: {0} Y: {1} \nРадиус: {2}. \nДлина окружности: {3}";
+            Console.WriteLine(string.Format(outputString, this.Center.X, this.Center.Y, this.Radius, this.GetLenght()));
+        }
     }
-  }
 }

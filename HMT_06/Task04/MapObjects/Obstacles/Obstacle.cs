@@ -1,10 +1,10 @@
 ﻿namespace Task04.MapObjects.Obstacles
 {
-  public class Obstacle : MapObject
-  {
-    public Obstacle()
+    public class Obstacle : MapObject
     {
-      this.IsMovable = false;
+        public Obstacle()
+        {
+            this.IsMovable = false;
+        }
     }
-  }
 }

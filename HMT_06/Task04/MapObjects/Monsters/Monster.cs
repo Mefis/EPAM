@@ -1,15 +1,18 @@
 ﻿namespace Task04.MapObjects.Monsters
 {
-  public class Monster : MapObject
-  {
-    public int Health { get; set; }
-    public int Speed { get; set; }
-    public int Attack { get; set; }
-    public bool IsAlive { get; set; }
-
-    public Monster()
+    public class Monster : MapObject
     {
-      this.IsMovable = true;
+        public Monster()
+        {
+            this.IsMovable = true;
+        }
+
+        public int Health { get; set; }
+
+        public static int Speed { get; set; }
+
+        public static int Attack { get; set; }
+
+        public bool IsAlive { get; set; }
     }
-  }
 }

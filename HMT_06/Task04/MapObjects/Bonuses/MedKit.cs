@@ -1,10 +1,10 @@
 ﻿namespace Task04.MapObjects.Bonuses
 {
-  public class MedKit : Bonus
-  {
-    public void AddHealth(Player player)
+    public class MedKit : Bonus
     {
-      player.Health++;
+        public void AddHealth(Player player)
+        {
+            player.Health++;
+        }
     }
-  }
 }

@@ -1,10 +1,10 @@
 ﻿namespace Task04.MapObjects.Monsters
 {
-  public class Bear : Monster
-  {
-    public Bear()
+    public class Bear : Monster
     {
-      this.Attack = base.Attack * 2;//todo pn хардкод
-		}
-  }
+        public Bear()
+        {
+            Bear.Attack = Monster.Attack * Settings.MonsterAttackBonus;
+        }
+    }
 }

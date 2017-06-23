@@ -1,23 +1,23 @@
-﻿using System;
-
-namespace Task03
+﻿namespace Task03
 {
-  public class Round : Circle, IFigure
-  {
-    public double GetArea()
-    {
-      var r = base.Radius;
-      return Math.PI * r * r; 
-    }
+    using System;
 
-    new public void Draw()
+    public class Round : Circle, IFigure
     {
-      Console.WriteLine(string.Format("Фигура: Круг. Координаты X: {0} Y: {1} \nРадиус: {2}. \nПлощадь круга: {3}",
-        this.Center.X, this.Center.Y, this.Radius, this.GetArea()));
-    }
+        public Round(Dot center, int radius) : base(center, radius)
+        {
+        }
 
-    public Round(Dot center, int radius) : base(center, radius)
-    {
+        public double GetArea()
+        {
+            var r = Radius;
+            return Math.PI * r * r;
+        }
+
+        public new void Draw()
+        {
+            string outputString = "Фигура: Круг. Координаты X: {0} Y: {1} \nРадиус: {2}. \nПлощадь круга: {3}";
+            Console.WriteLine(string.Format(outputString, this.Center.X, this.Center.Y, this.Radius, this.GetArea()));
+        }
     }
-  }
 }

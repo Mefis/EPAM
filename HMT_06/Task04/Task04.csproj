@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Settings.cs" />
     <Compile Include="MapObjects\Bonuses\Bonus.cs" />
     <Compile Include="MapObjects\Bonuses\Coin.cs" />
     <Compile Include="MapObjects\Bonuses\EnergyDrink.cs" />

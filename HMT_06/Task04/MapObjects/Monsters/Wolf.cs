@@ -1,10 +1,10 @@
 ﻿namespace Task04.MapObjects.Monsters
 {
-  public class Wolf : Monster
-  {
-    public Wolf()
+    public class Wolf : Monster
     {
-      this.Speed = base.Speed * 2; //todo pn хардкод
+        public Wolf()
+        {
+            Wolf.Speed = Monster.Speed * Settings.SpeedBonus;
+        }
     }
-  }
 }

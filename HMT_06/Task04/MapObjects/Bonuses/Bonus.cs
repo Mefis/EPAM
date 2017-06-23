@@ -1,10 +1,10 @@
 ﻿namespace Task04.MapObjects.Bonuses
 {
-  public class Bonus : MapObject
-  {
-    public Bonus()
+    public class Bonus : MapObject
     {
-      this.IsMovable = false;
+        public Bonus()
+        {
+            this.IsMovable = false;
+        }
     }
-  }
 }

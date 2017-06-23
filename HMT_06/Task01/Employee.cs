@@ -1,33 +1,36 @@
 ﻿namespace Task01
 {
-  /// <summary>
-  /// Класс сотрудник.
-  /// </summary>
-  public class Employee : User
-  {
-    /// <summary>
-    /// Должность.
-    /// </summary>
-    public string Post { get; private set; }
+    using System;
 
     /// <summary>
-    /// Стаж работы.
+    /// Employee class.
     /// </summary>
-    public int Experience { get; private set; }
+    public class Employee : User
+    {
+        /// <summary>
+        /// Initializes a new instance of the Employee class.
+        /// </summary>
+        /// <param name="lastName">Passes employee last name value.</param>
+        /// <param name="name">Passes employee name value.</param>
+        /// <param name="patronymic">Passes employee patronymic value.</param>
+        /// <param name="dateOfBirth">Passes employee date of birth value.</param>
+        /// <param name="age">Passes employee age value.</param>
+        /// <param name="post">Passes employee post value.</param>
+        /// <param name="experience">Passes employee experience value.</param>
+        public Employee(string lastName, string name, string patronymic, DateTime dateOfBirth, int age, string post, int experience) : base(lastName, name, patronymic, dateOfBirth, age)
+        {
+            this.Post = post;
+            this.Experience = experience;
+        }
 
-    public Employee(string lastName, string name, string patronymic, string dateOfBirth, string post, string experience) : base(lastName, name, patronymic, dateOfBirth)//todo pn опять же experience хочется видеть int, а не string
-		{
-      this.Post = post;
+        /// <summary>
+        /// Gets employee's post.
+        /// </summary>
+        public string Post { get; private set; }
 
-      int exp;
-      if (int.TryParse(experience, out exp) && exp < base.Age)
-      {
-        this.Experience = exp;
-      }
-      else
-      {
-        this.Experience = default(int);
-      }
+        /// <summary>
+        /// Gets employee's experience.
+        /// </summary>
+        public int Experience { get; private set; }
     }
-  }
 }

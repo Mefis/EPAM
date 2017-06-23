@@ -1,10 +1,10 @@
 ﻿namespace Task04.MapObjects.Bonuses
 {
-  public class Coin : Bonus
-  {
-    public void AddCoin(Player player)
+    public class Coin : Bonus
     {
-      player.Coins++;
+        public void AddCoin(Player player)
+        {
+            player.Coins++;
+        }
     }
-  }
 }
