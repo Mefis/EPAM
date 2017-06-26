@@ -59,6 +59,8 @@
             Console.WriteLine();
             Console.WriteLine(array.Length);
             Console.WriteLine(array.Capacity);
+
+			//todo pn Сonsole.ReadKey();
         }
     }
 }
