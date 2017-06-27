@@ -96,7 +96,7 @@
             {
                 var newValue = this.Value;
                 int oldValueLength = this.Capacity;
-                Array.Resize(ref newValue, newValue.Length * 2); //todo не очень хорошее решение с т.з. производительности. Представь, что у тебя в массиве 1млн элементов, а добавить нужно штук 100. Для чего выделять дополнительно ещё 1млн пустых записей? Лучше задать константой какое-то значение, на которое ты увеличиваешь массив при переполнении.
+                Array.Resize(ref newValue, newValue.Length * 2);
 				newValue[oldValueLength] = element;
                 this.Value = newValue;
             }
