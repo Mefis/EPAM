@@ -7,6 +7,12 @@
     /// </summary>
     public class Person : IMessageWriter
     {
+        private const string Morning = "morning";
+
+        private const string Afternoon = "afternoon";
+
+        private const string Evening = "evening";
+
         /// <summary>
         /// Refers to a method that works with MessageSenderEventArgs.
         /// </summary>
@@ -67,16 +73,16 @@
                 string partOfDay;
                 if (ArrivalTime.Hour > 16)
                 {
-                    partOfDay = "evening";//todo pn хардкод (в константу)
+                    partOfDay = Evening;
                 }
                 else if (ArrivalTime.Hour > 11)
                 {
-                    partOfDay = "afternoon";//todo pn хардкод (в константу)
-				}
+                    partOfDay = Afternoon;
+                }
                 else
                 {
-                    partOfDay = "morning";//todo pn хардкод (в константу)
-				}
+                    partOfDay = Morning;
+                }
 
                 this.Write(string.Format("\"Good {0}, {1}\" - said {2}.", partOfDay, person.Name, this.Name));
             }
@@ -96,8 +102,8 @@
 
         public void Write(string inputString)
         {
-            Console.WriteLine(inputString);//todo pn не заметил, наверное)
-		}
+            Console.WriteLine(inputString);
+        }
 
         /// <summary>
         /// Raises the event associated with the MessageSenderEventHandler delegate.

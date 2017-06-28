@@ -1,10 +1,6 @@
 ﻿namespace Task02
 {
     using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
 
     // Задание 2
     // Написать программу, описывающую небольшой офис, в котором работают сотрудники – объекты класса Person, обладающие полем имя(Name). 
@@ -22,7 +18,7 @@
     /// <summary>
     /// Main Task02 class.
     /// </summary>
-    public static class Program//todo pn у тебя прям исчерпывающая документация по всем методам) это круто!
+    public static class Program
     {
         /// <summary>
         /// Main Task02 method.
@@ -52,7 +48,7 @@
             george.Left();
             ringo.Left();
 
-	        Console.ReadKey();
+            Console.ReadKey();
         }
     }
 }
