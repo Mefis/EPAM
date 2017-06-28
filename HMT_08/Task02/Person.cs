@@ -67,16 +67,16 @@
                 string partOfDay;
                 if (ArrivalTime.Hour > 16)
                 {
-                    partOfDay = "evening";
+                    partOfDay = "evening";//todo pn хардкод (в константу)
                 }
                 else if (ArrivalTime.Hour > 11)
                 {
-                    partOfDay = "afternoon";
-                }
+                    partOfDay = "afternoon";//todo pn хардкод (в константу)
+				}
                 else
                 {
-                    partOfDay = "morning";
-                }
+                    partOfDay = "morning";//todo pn хардкод (в константу)
+				}
 
                 this.Write(string.Format("\"Good {0}, {1}\" - said {2}.", partOfDay, person.Name, this.Name));
             }
@@ -96,8 +96,8 @@
 
         public void Write(string inputString)
         {
-            Console.WriteLine(inputString);
-        }
+            Console.WriteLine(inputString);//todo pn не заметил, наверное)
+		}
 
         /// <summary>
         /// Raises the event associated with the MessageSenderEventHandler delegate.

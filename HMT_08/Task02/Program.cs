@@ -22,7 +22,7 @@
     /// <summary>
     /// Main Task02 class.
     /// </summary>
-    public static class Program
+    public static class Program//todo pn у тебя прям исчерпывающая документация по всем методам) это круто!
     {
         /// <summary>
         /// Main Task02 method.
@@ -51,6 +51,8 @@
             paul.Left();
             george.Left();
             ringo.Left();
+
+	        Console.ReadKey();
         }
     }
 }
