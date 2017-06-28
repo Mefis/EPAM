@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IMessageWriter.cs" />
     <Compile Include="MessageSenderEventArgs.cs" />
     <Compile Include="Office.cs">
       <ExcludeFromStyleCop>True</ExcludeFromStyleCop>

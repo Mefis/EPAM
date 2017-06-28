@@ -5,7 +5,7 @@
     /// <summary>
     /// Basic person class.
     /// </summary>
-    public class Person
+    public class Person : IMessageWriter
     {
         /// <summary>
         /// Refers to a method that works with MessageSenderEventArgs.
@@ -78,7 +78,7 @@
                     partOfDay = "morning";
                 }
 
-                Console.WriteLine(string.Format("\"Good {0}, {1}\" - said {2}.", partOfDay, person.Name, this.Name));
+                this.Write(string.Format("\"Good {0}, {1}\" - said {2}.", partOfDay, person.Name, this.Name));
             }
         }
 
@@ -90,8 +90,13 @@
         {
             if (!this.Equals(person))
             {
-                Console.WriteLine(string.Format("\"Goodbye, {0}\" - said {1}.", person.Name, this.Name));
+                this.Write(string.Format("\"Goodbye, {0}\" - said {1}.", person.Name, this.Name));
             }
+        }
+
+        public void Write(string inputString)
+        {
+            Console.WriteLine(inputString);
         }
 
         /// <summary>
@@ -118,7 +123,7 @@
         /// <param name="e">Passes MessageSenderEventArgs value.</param>
         private void ArrivedMessage(object sender, MessageSenderEventArgs e)
         {
-            Console.WriteLine(string.Format("{0} arrived.", this.Name));
+            this.Write(string.Format("{0} arrived.", this.Name));
         }
 
         /// <summary>
@@ -128,7 +133,7 @@
         /// <param name="e">Passes EventArgs value.</param>
         private void LeftMessage(object sender, EventArgs e)
         {
-            Console.WriteLine(string.Format("{0} left.", this.Name));
+            this.Write(string.Format("{0} left.", this.Name));
         }
     }
 }
