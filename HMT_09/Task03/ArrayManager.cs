@@ -62,7 +62,7 @@
         /// </summary>
         /// <param name="array">Passes integer array.</param>
         /// <returns>Array of all positive values.</returns>
-        public static List<int> GetPositiveElements_02(List<int> array)
+        public static List<int> GetPositiveElements_02(List<int> array)//todo pn не совсем верно понял задание, "передается", значит в качестве входного параметра, а не в качестве глобальной переменной (здесь и везде ниже).
         {
             List<int> positiveIntegerArray = new List<int>();
             foreach (int elem in array)

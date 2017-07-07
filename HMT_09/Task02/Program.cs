@@ -48,7 +48,7 @@
             var isPositiveInteger = false;
             try
             {
-                int integerValue = Convert.ToInt32(inputString);
+                int integerValue = Convert.ToInt32(inputString);//todo pn всегда нужно ещё учитывать культуру, поскольку разделители дробной части мб разными в зависимости от языка машины
                 if (integerValue > 0)
                 {
                     isPositiveInteger = true;
