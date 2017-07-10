@@ -24,6 +24,35 @@
         private static Random random = new Random((int)DateTime.Now.Ticks);
 
         /// <summary>
+        /// Refers to a static method that checks for positive integer values.
+        /// </summary>
+        private static Predicate<int> isPositive = IsPositive;
+
+        /// <summary>
+        /// Gets anonymous method for positive values.
+        /// </summary>
+        private static IsPositiveAnonymous isPositiveAnonymous = delegate (int elem) { return elem > 0; };
+
+        /// <summary>
+        /// Gets lambda expression for positive values.
+        /// </summary>
+        private static IsPositiveLambda isPositiveLambda = x => x > 0;
+
+        /// <summary>
+        /// Refers to a static method that works with integer values.
+        /// </summary>
+        /// <param name="elem">Passes integer value.</param>
+        /// <returns>Boolean value depending on the result of check.</returns>
+        public delegate bool IsPositiveAnonymous(int elem);
+
+        /// <summary>
+        /// Refers to a static method that works with integer values.
+        /// </summary>
+        /// <param name="elem">Passes integer value.</param>
+        /// <returns>Boolean value depending on the result of check.</returns>
+        public delegate bool IsPositiveLambda(int elem);
+
+        /// <summary>
         /// Main Task03 method.
         /// </summary>
         public static void Main()
@@ -45,19 +74,19 @@
             Console.WriteLine(string.Format("Метод №1: {0}", ts));
 
             stopWatch.Start();
-            positiveIntegerArray = ArrayManager.GetPositiveElements_02(integerArray);
+            positiveIntegerArray = ArrayManager.GetPositiveElements_02(integerArray, isPositive);
             stopWatch.Stop();
             ts = stopWatch.Elapsed;
             Console.WriteLine(string.Format("Метод №2: {0}", ts));
 
             stopWatch.Start();
-            positiveIntegerArray = ArrayManager.GetPositiveElements_03(integerArray);
+            positiveIntegerArray = ArrayManager.GetPositiveElements_03(integerArray, isPositiveAnonymous);
             stopWatch.Stop();
             ts = stopWatch.Elapsed;
             Console.WriteLine(string.Format("Метод №3: {0}", ts));
 
             stopWatch.Start();
-            positiveIntegerArray = ArrayManager.GetPositiveElements_04(integerArray);
+            positiveIntegerArray = ArrayManager.GetPositiveElements_04(integerArray, isPositiveLambda);
             stopWatch.Stop();
             ts = stopWatch.Elapsed;
             Console.WriteLine(string.Format("Метод №4: {0}", ts));
@@ -69,6 +98,16 @@
             Console.WriteLine(string.Format("Метод №5: {0}", ts));
 
             Console.ReadKey();
+        }
+
+        /// <summary>
+        /// Checks whether the value is positive.
+        /// </summary>
+        /// <param name="elem">Passes integer value.</param>
+        /// <returns>Boolean value depending on the result of positive value check.</returns>
+        private static bool IsPositive(int elem)
+        {
+            return elem > 0;
         }
     }
 }
