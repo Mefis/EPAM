@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Task03</title>
+    <meta charset="utf-8" />
+    <meta name="description" content="Задание 3
+          Создать страницу с двумя связанными списками. При нажатии определенных кнопок выделенные элементы из одного списка перекидываются в другой.
+          При этом выделение с них снимается и они добавляются в конец списка. Если ни один из элементов не выделен, выводится сообщение.
+          При нажатии определенных кнопок все элементы из одного списка перекидываются в другой.
+          Примечание
+          Предусмотреть возможность нахождения на одной странице нескольких таких групп элементов со схожим функционалом." />
+    <link rel="stylesheet" type="text/css" href="Task03.css" media="all"/>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="Task03.js"></script>
+</head>
+<body>
+    <div class="main-div" name="firstForm">
+        <div>
+            <h4 class="header" align="center">Available</h4>
+            <select name="available" id="firstForm_availableFrom" style="width: 300px" size="8" multiple="multiple">
+                <option>Option 1</option>
+                <option>Option 2</option>
+                <option>Option 3</option>
+                <option>Option 4</option>
+                <option>Option 5</option>
+            </select>
+        </div>
+
+        <div class="button-div">
+            <button type="button" id="firstForm_rightAll"><img src="images/rightAll.png" style="vertical-align: middle"></button>
+            <button type="button" id="firstForm_rightSelected"><img src="images/right.png" style="vertical-align: middle"></button>
+            <button type="button" id="firstForm_leftSelected"><img src="images/left.png" style="vertical-align: middle"></button>
+            <button type="button" id="firstForm_leftAll"><img src="images/leftAll.png" style="vertical-align: middle"></button>
+        </div>
+
+        <div>
+            <h4 class="header" align="center">Selected</h4>
+            <select name="selected" id="firstForm_selectedTo" style="width: 300px" size="8" multiple="multiple"></select>
+        </div>
+    </div>
+
+    <div class="main-div" name="secondForm">
+        <div>
+            <h4 class="header" align="center">Available</h4>
+            <select name="available" id="secondForm_availableFrom" style="width: 300px" size="8" multiple="multiple">
+                <option>Option 1</option>
+                <option>Option 2</option>
+                <option>Option 3</option>
+                <option>Option 4</option>
+                <option>Option 5</option>
+            </select>
+        </div>
+
+        <div class="button-div">
+            <button type="button" id="secondForm_rightAll" class="btn btn-block"><img src="images/rightAll.png" style="vertical-align: middle"></button>
+            <button type="button" id="secondForm_rightSelected" class="btn btn-block"><img src="images/right.png" style="vertical-align: middle"></button>
+            <button type="button" id="secondForm_leftSelected" class="btn btn-block"><img src="images/left.png" style="vertical-align: middle"></button>
+            <button type="button" id="secondForm_leftAll" class="btn btn-block"><img src="images/leftAll.png" style="vertical-align: middle"></button>
+        </div>
+
+        <div>
+            <h4 class="header" align="center">Selected</h4>
+            <select name="selected" id="secondForm_selectedTo" style="width: 300px" size="8" multiple="multiple"></select>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            start("#firstForm");
+            start("#secondForm");
+        });
+    </script>
+</body>
+</html>

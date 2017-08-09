@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Task04</title>
+    <meta charset="utf-8" />
+    <meta name="description" content="Задание 4
+          Создать сайт, позволяющий просматривать несколько страниц последовательно друг за другом. Содержимое страниц значения не имеет. 
+          Каждая страница показывается в течение определённого времени, по истечении которого происходит переход на следующую страницу. 
+          Последовательность страниц жёстко задана. На странице должен быть размещён обратный отсчёт до перехода на следующую страницу.
+          При достижении последней страницы выводится запрос о повторении пролистывания страниц или завершении работы. 
+          Если выбрано пролистывание, то пользователь перенаправляется на первую страницу, если же выбрано завершение пролистывания, то окно браузера закрывается. 
+          На каждой странице пользователь может:
+          1) Перейти на предыдущую страницу при нажатии на определённую кнопку.
+          2) Приостановить обратный отсчёт и повторно запустить его." 
+          />
+</head>
+<body>
+    <script type="text/javascript" src="Task04.js"></script>
+    <div id="picture"></div>
+    <div id="status"></div>
+    <div>
+        <button type="button" id="goBack" onclick="goBack()"><img src="images/Back.png" style="vertical-align: middle"></button>
+        <button type="button" id="playPause" onclick="playPause()"><img src="images/PlayPause.png" style="vertical-align: middle"></button>
+        <button type="button" id="goForward" onclick="goForward()"><img src="images/Forward.png" style="vertical-align: middle"></button>
+    </div>
+    <script type="text/javascript">
+        setPage(1);
+        countDown();
+    </script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+﻿.header {
+    margin-top: 10px; 
+    margin-bottom: 5px; 
+}
+
+.main-div {
+    display: flex; 
+    justify-content: center;
+}
+
+.button-div {
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    padding-top: 35px
+}
