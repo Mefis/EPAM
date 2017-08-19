@@ -11,7 +11,7 @@ function countDown() {
     var status = document.getElementById("status");
     var picture = document.getElementById("picture");
     status.innerHTML = "Next page in " + secs + " seconds."
-    picture.innerHTML = '<img src="images/Page0' + page + '.png" style="vertical-align: middle">';
+    picture.innerHTML = '<img src="images/Page_' + page + '.png" style="vertical-align: middle">';
     if (secs < 1) {
         clearTimeout(timer);
         if (page === 4) {
