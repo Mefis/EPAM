@@ -1,0 +1,29 @@
+﻿#main-low-div{
+    margin:0px
+}
+
+#main-header{
+    height:100px; 
+    line-height:100px; 
+    text-align: center;
+}
+
+#menu-div{
+    width:200px; 
+    left:0px; 
+    padding:5px;
+}
+
+#center-header{
+    text-align: center;
+}
+
+#form{
+    width:200px; 
+    right:0px; 
+    padding:5px;
+}
+
+#center-div{
+    padding:5px
+}

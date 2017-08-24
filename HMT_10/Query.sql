@@ -6,7 +6,7 @@
 Формат указания даты должен быть верным при любых региональных настройках, согласно требованиям статьи 
 “Writing International Transact-SQL Statements” в Books Online раздел “Accessing and Changing Relational Data Overview”.
 Этот метод использовать далее  для  всех  заданий. Запрос должен высвечивать только колонки OrderID, ShippedDate и ShipVia. 
-Пояснить  почему  сюда  не  попали  заказы  с NULL-ом  в  колонке ShippedDate.*/
+Пояснить почему сюда не попали заказы с NULL-ом в колонке ShippedDate.*/
 
 select OrderID, ShippedDate, ShipVia
 from dbo.Orders
@@ -104,7 +104,7 @@ order by Country;
 
 select *
 from dbo.Products
-where ProductName like 'cho_olade';
+where ProductName like '%cho_olade%';
 
 /*5 Использование агрегатных функций (SUM, COUNT)*/
 
