@@ -1,0 +1,80 @@
+﻿@model HMT_13.Models.EditOrderModel
+
+<div class="modal fade bd-example-modal-lg" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel2">Edit order information</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                @using (@Html.BeginForm("EditOrder", "Home", FormMethod.Post))
+                {
+                    <div class="form-group">
+                        <label>OrderID</label>
+                        <input class="form-control" id="OrderID" name="OrderID" required>
+                    </div>
+                    <div class="form-group">
+                        <label>CustomerID</label>
+                        <input class="form-control" name="CustomerID">
+                    </div>
+                    <div class="form-group">
+                        <label>EmployeeID</label>
+                        <input class="form-control" name="EmployeeID">
+                    </div>
+                    <div class="form-group">
+                        <label>OrderDate</label>
+                        <input class="form-control" name="OrderDate">
+                    </div>
+                    <div class="form-group">
+                        <label>RequiredDate</label>
+                        <input class="form-control" name="RequiredDate">
+                    </div>
+                    <div class="form-group">
+                        <label>ShippedDate</label>
+                        <input class="form-control" name="ShippedDate">
+                    </div>
+                    <div class="form-group">
+                        <label>ShipVia</label>
+                        <input class="form-control" name="ShipVia">
+                    </div>
+                    <div class="form-group">
+                        <label>Freight</label>
+                        <input class="form-control" name="Freight">
+                    </div>
+                    <div class="form-group">
+                        <label>ShipName</label>
+                        <input class="form-control" name="ShipName">
+                    </div>
+                    <div class="form-group">
+                        <label>ShipAddress</label>
+                        <input class="form-control" name="ShipAddress">
+                    </div>
+                    <div class="form-group">
+                        <label>ShipCity</label>
+                        <input class="form-control" name="ShipCity">
+                    </div>
+                    <div class="form-group">
+                        <label>ShipRegion</label>
+                        <input class="form-control" name="ShipRegion">
+                    </div>
+                    <div class="form-group">
+                        <label>ShipPostalCode</label>
+                        <input class="form-control" name="ShipPostalCode">
+                    </div>
+                    <div class="form-group">
+                        <label>ShipCountry</label>
+                        <input class="form-control" name="ShipCountry">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                }
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <title>List of order items</title>
+    <meta charset="utf-8" />
+    @Styles.Render("~/Content/css")
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
+            integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"
+            integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h2 class="center">List of order items</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Order ID</th>
+                <th>ProductID</th>
+                <th>UnitPrice</th>
+                <th>Quantity</th>
+                <th>Discount</th>
+                <th>Product Name</th>
+                <th>Price</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody class="detail-info">
+            @if (Model.Count != 0)
+            {
+                foreach (var item in Model)
+                {
+                    <tr>
+                        <th scope="row">@item.OrderID</th>
+                        <td>@item.ProductID</td>
+                        <td>@item.UnitPrice</td>
+                        <td>@item.Quantity</td>
+                        <td>@item.Discount</td>
+                        <td>@item.ProductName</td>
+                        <td>@item.Price</td>
+                        <td>
+                            <button type="button" class="btn btn-light" data-toggle="modal" data-target="#exampleModal3" onclick="getID(@item.OrderID, @item.ProductID)">Edit</button>
+                            <button type="button" class="btn btn-danger"
+                                    onclick="confirm('You sure you want to delete order item №@item.OrderID with product @item.ProductName?')
+                                                    ? location.href='@Url.Action("DeleteOrderItem", "Home", new { orderID = item.OrderID, ProductID = item.ProductID }, null)'
+                                                    : false">Delete</button>
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+    <button type="button" class="btn btn-primary margin10" data-toggle="modal" data-target="#exampleModal3" onclick="clearID(@ViewBag.OrderID)">Create new order item</button>
+    @Html.Partial("EditOrderItem", new HMT_13.Models.EditOrCreateOrderItemModel())
+    <script type="text/javascript">
+        function getID(ID, ProdID) {
+            $('#OrderItemID').val(ID)
+            $('#ProductID').val(ProdID)
+        }
+        function clearID(ID) {
+            $('#OrderItemID').val(ID)
+            $('#ProductID').val("")
+        }
+    </script>
+</body>
+</html>
