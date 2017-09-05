@@ -23,7 +23,7 @@
             catch
             {
                 ViewBag.Text = string.Empty;
-                ViewBag.Error = "Something went wrong!";
+                ViewBag.Error = "Something went wrong!";//todo pn все сообщения в ресурсы
                 return this.View("Index", DataManager.GetOrderListFromDB());
             }
 
