@@ -165,7 +165,7 @@
                 connection.Open();
 
                 var command = connection.CreateCommand();
-                command.CommandText = "select Likes, LikesCount from Photos where PhotoID = photoID";
+                command.CommandText = "select Likes, LikesCount from Photos where PhotoID = @photoID";
 
                 var parameter = command.CreateParameter();
                 parameter.ParameterName = "@photoID";

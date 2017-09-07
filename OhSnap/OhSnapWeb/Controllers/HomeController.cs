@@ -95,13 +95,21 @@
         [HttpGet]
         public ActionResult LikeSnap(int photoID)
         {
-            var activeUser = OhSnapDAL.Managers.UserManager.GetUserFromDB(User.Identity.Name);
-            
-            OhSnapDAL.Managers.PhotoManager.LikePhoto(photoID, activeUser.UserID);
-
             var photo = OhSnapDAL.Managers.PhotoManager.GetPhotoFromDB(photoID);
 
-            ViewBag.Warning = string.Empty;
+            if (User.Identity.IsAuthenticated)
+            {
+                var activeUser = OhSnapDAL.Managers.UserManager.GetUserFromDB(User.Identity.Name);
+
+                OhSnapDAL.Managers.PhotoManager.LikePhoto(photoID, activeUser.UserID);
+
+                photo = OhSnapDAL.Managers.PhotoManager.GetPhotoFromDB(photoID);
+
+                ViewBag.Warning = string.Empty;
+                return View("ViewSnap", photo);
+            }
+
+            ViewBag.Warning = "You need to be authorized.";
             return View("ViewSnap", photo);
         }
 
