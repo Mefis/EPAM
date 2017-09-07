@@ -47,8 +47,8 @@
                         var companyName = (reader["CompanyName"] ?? string.Empty).ToString();
                         var orderDateString = reader["OrderDate"].ToString();
                         var orderDate = orderDateString == 
-                            string.Empty ? default(DateTime) : DateTime.ParseExact(orderDateString, "dd.MM.yyyy H:mm:ss", System.Globalization.CultureInfo.InvariantCulture);
-                        var shippedDateString = reader["ShippedDate"].ToString();
+                            string.Empty ? default(DateTime) : DateTime.ParseExact(orderDateString, "dd.MM.yyyy H:mm:ss", System.Globalization.CultureInfo.InvariantCulture);//todo pn упало здесь
+						var shippedDateString = reader["ShippedDate"].ToString();
                         var shippedDate = shippedDateString == 
                             string.Empty ? default(DateTime) : DateTime.ParseExact(shippedDateString, "dd.MM.yyyy H:mm:ss", System.Globalization.CultureInfo.InvariantCulture);
                         var productID = (reader["ProductID"] ?? string.Empty).ToString();

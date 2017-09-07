@@ -2,8 +2,8 @@
 {
     using System;
 
-    public class Order
-    {
+    public class Order//todo pn валидации нет вообще
+	{
         public Order(string orderID, string companyName, DateTime orderDate, DateTime shippedDate, string productID, float unitPrice, string quantity, string discount, string productName, float price)
         {
             this.OrderID = orderID;

@@ -4,8 +4,8 @@
 
     public class EditOrderModel
     {
-        [Required]
-        public string OrderID { get; set; }
+        [Required]//todo pn мне кажется, нужно поработать с валидацией этой модели
+		public string OrderID { get; set; }
 
         public string CustomerID { get; set; }
 
