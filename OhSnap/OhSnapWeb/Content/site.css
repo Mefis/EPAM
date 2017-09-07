@@ -1,0 +1,22 @@
+﻿.text-center {
+    text-align:center;
+    padding: 10px;
+}
+
+.img {
+    vertical-align: middle; 
+    max-width: 100%; 
+    max-height: 100%;
+}
+
+.img-field {
+    width: 350px; 
+    height: 350px; 
+    line-height: 350px; 
+    text-align: center;
+}
+
+.column {
+    padding-left:0px;
+    padding-right:0px;
+}

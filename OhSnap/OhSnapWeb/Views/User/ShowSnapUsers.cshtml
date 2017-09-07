@@ -1,0 +1,28 @@
+﻿@model List<OhSnapDAL.Models.User>
+
+@{
+    ViewBag.Title = "ShowSnapUsers";
+}
+
+<div class="text-center">
+    <h2>ShowSnapUsers</h2>
+</div>
+
+<div class="list-group text-center">
+    @if (Model.Count != 0)
+    {
+        foreach (var item in Model)
+        {
+            <div class="row">
+                <div class="col-md-6 column">
+                    <a href="#" class="list-group-item list-group-item-action" 
+                       onclick="location.href='@Url.Action("UserInfo", "User", new { userID = item.UserID }, null)'">@item.UserLogin</a>
+                </div>
+                <div class="col-md-6 column">
+                    <a href="#" class="list-group-item list-group-item-action" 
+                       onclick="location.href='@Url.Action("ShowSnaps", "Home", new { userID = item.UserID }, null)'">@item.UserLogin Gallery</a>
+                </div>
+            </div>
+        }
+    }
+</div>

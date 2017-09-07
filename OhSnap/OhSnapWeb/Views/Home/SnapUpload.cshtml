@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "SnapUpload";
+}
+
+@{if (@ViewBag.Warning != "") {<div class="alert alert-danger" role="alert">@ViewBag.Warning</div>} }
+
+@using (Html.BeginForm("Upload", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="text-center">
+        <h2>Upload your Snap!</h2>
+    </div>
+    <div class="text-center">
+        <input type="file" name="file" />
+    </div>
+    <div class="text-center">
+        <input type="submit" name="Submit" id="Submit" value="Upload" />
+    </div>
+}

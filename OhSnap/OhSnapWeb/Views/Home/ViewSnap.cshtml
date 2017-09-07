@@ -1,0 +1,43 @@
+﻿@model OhSnapDAL.Models.Photo
+
+@{
+    ViewBag.Title = "ViewSnap";
+}
+
+@{if (@ViewBag.Warning != "") {<div class="alert alert-danger" role="alert">@ViewBag.Warning</div>} }
+
+@{ 
+    if (Model != null)
+    {
+        var activeUser = OhSnapDAL.Managers.UserManager.GetUserFromDB(User.Identity.Name);
+
+        var imgSrc = String.Format("data:{0};base64,{1}", Model.FileType, Convert.ToBase64String(Model.ByteArray));
+
+        <div class="text-center">
+            <h2>ViewSnap</h2>
+        </div>
+        <div class="text-center">
+            <img class="img" src="@imgSrc" />
+        </div>
+        <div class="text-center">
+            <button type="button" class="btn btn-dark" onclick="location.href='@Url.Action("LikeSnap", "Home", new { photoID = Model.PhotoID }, null)'">
+                Like @Model.LikesCount
+            </button>
+            @if (activeUser.UserID == Model.UserID || activeUser.RoleID == 1)
+            { 
+            <button type="button" class="btn btn-dark"
+                    onclick="confirm('You sure you want to delete this snap?')
+                                    ? location.href='@Url.Action("DeleteSnap", "Home", new { photoID = Model.PhotoID }, null)'
+                                    : false">Delete</button>
+            }
+        </div>
+    }
+    else
+    {
+        <div class="text-center">
+            <h2>Couldn't load a snap. Sorry :C</h2>
+        </div>
+    }
+}
+
+

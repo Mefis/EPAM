@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "OhSnap!";
+}
+
+@{if (@ViewBag.Warning != "") {<div class="alert alert-danger" role="alert">@ViewBag.Warning</div>} }
+@{if (@ViewBag.Text != "") {<div class="alert alert-success" role="alert">@ViewBag.Text</div>} }
+
+@{ 
+    if (Model != null && Model.Count > 0)
+    {
+        var imgSrcList = new List<string>();
+
+        <div class="text-center">
+            <h2>Newest Snaps!</h2>
+        </div>
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                var imgSrc = String.Format("data:{0};base64,{1}", item.FileType, Convert.ToBase64String(item.ByteArray));
+
+                <div class="img-field col-md-4">
+                    <a href="#" onclick="location.href='@Url.Action("ViewSnap", "Home", new { photoID = item.PhotoID }, null)'">
+                        <img class="img" src="@imgSrc" />
+                    </a>
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <div class="text-center">
+            <h2>There were no snaps uploaded. Want to @Html.ActionLink("upload", "SnapUpload", "Home")?</h2>
+        </div>
+    }
+}

@@ -1,0 +1,42 @@
+﻿@model List<OhSnapDAL.Models.Photo>
+
+@{
+    ViewBag.Title = "FindSnaps";
+}
+
+<div class="text-center">
+    <h2>Find Snaps by name</h2>
+</div>
+
+@using (Html.BeginForm())
+{
+    <div class="input-group col-md-4">
+        <span class="input-group-btn">
+            <button class="btn btn-dark" type="submit">Find</button>
+        </span>
+        <input type="text" class="form-control" name="photoName" placeholder="Enter name (Empty for all snaps)">
+    </div>
+}
+
+@{
+    if (Model != null && Model.Count > 0)
+    {
+        var imgSrcList = new List<string>();
+
+        <div class="text-center">
+            <h2>Wanted Snaps</h2>
+        </div>
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                var imgSrc = String.Format("data:{0};base64,{1}", item.FileType, Convert.ToBase64String(item.ByteArray));
+
+                <div class="img-field col-sm-4">
+                    <a href="#" onclick="location.href='@Url.Action("ViewSnap", "Home", new { photoID = item.PhotoID }, null)'">
+                        <img class="img" src="@imgSrc" />
+                    </a>
+                </div>
+            }
+        </div>
+    }
+}
